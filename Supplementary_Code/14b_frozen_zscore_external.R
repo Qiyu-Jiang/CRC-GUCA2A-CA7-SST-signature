@@ -1,0 +1,66 @@
+# P0_07b frozen z-score only (part b rerun)
+root  <- "F:/232机器学习联合神经网络/CRC"
+out99 <- file.path(root, "99.P0", "07.postreview_sensitivity")
+dir.create(out99, showWarnings = FALSE, recursive = TRUE)
+supp  <- file.path(root, "DELIVERY_2026-09-15", "3_GitHub公开资料与投稿上传包",
+                   "SUBMISSION_SUPP", "Supplementary_Tables")
+
+## frozen z-score external validation
+## Exact replication of P0_01 model calls, only the scaling changes:
+##   original: trainZ = scale(trainRaw); testZ = scale(testRaw)  (cohort-internal)
+##   frozen:   extZ_f = (extRaw - mu_train) / sd_train           (train-set parameters)
+genes3 <- c("GUCA2A", "CA7", "SST")
+readExpr <- function(path){
+  rt <- read.table(path, header = TRUE, sep = "\t", check.names = FALSE,
+                   quote = "", comment.char = "", stringsAsFactors = FALSE)
+  m <- as.matrix(rt[, -1]); storage.mode(m) <- "numeric"
+  rownames(m) <- as.character(rt[[1]]); m
+}
+trainRaw <- t(readExpr(file.path(root, "06.sva", "merge.normalize.txt"))[genes3, ])
+ext      <- readExpr(file.path(root, "24.testDiff", "GSE110224.normalize.txt"))
+testRaw  <- t(ext[genes3, ])
+grp  <- sub(".*_(Control|Treat)$", "\\1", rownames(trainRaw))
+y    <- ifelse(grp  == "Treat", 1L, 0L)
+grp2 <- sub(".*_(Control|Treat)$", "\\1", colnames(ext))
+y2   <- ifelse(grp2 == "Treat", 1L, 0L)
+cat("train dim:", dim(trainRaw), " Control:", sum(y==0), " Treat:", sum(y==1), "\n")
+cat("external dim:", dim(testRaw), " Control:", sum(y2==0), " Treat:", sum(y2==1), "\n")
+
+mu  <- colMeans(trainRaw); sdv <- apply(trainRaw, 2, sd)
+fz  <- function(X) sweep(sweep(X, 2, mu, "-"), 2, sdv, "/")
+trainZ_f <- fz(trainRaw); extZ_f <- fz(testRaw)
+
+mkX <- function(X){ d <- as.data.frame(X); colnames(d) <- genes3; d }
+netfit <- function(X, yy, seed){
+  set.seed(seed)
+  neuralnet(Control + Treat ~ GUCA2A + CA7 + SST,
+            cbind(mkX(X), Control = 1 - yy, Treat = yy),
+            hidden = 5, stepmax = 1e6)
+}
+netpred <- function(fit, X){
+  nn <- compute(fit, mkX(X))$net.result
+  colnames(nn) <- c("Control", "Treat"); nn
+}
+
+library(neuralnet)
+library(pROC)
+nn_f <- netfit(trainZ_f, y, 123)
+pn <- netpred(nn_f, extZ_f)
+auc.ann_f <- as.numeric(pROC::roc(y2, pn[, "Treat"], quiet = TRUE)$auc)
+ci.ann_f  <- as.numeric(pROC::ci.auc(y2, pn[, "Treat"], quiet = TRUE))
+
+glm_f <- glm(y ~ ., data = cbind(mkX(trainZ_f), y = y), family = binomial)
+pg <- as.numeric(predict(glm_f, newdata = data.frame(mkX(extZ_f), check.names = FALSE), type = "response"))
+auc.glm_f <- as.numeric(pROC::roc(y2, pg, quiet = TRUE)$auc)
+ci.glm_f  <- as.numeric(pROC::ci.auc(y2, pg, quiet = TRUE))
+
+res <- data.frame(
+  model = c("ANN external (frozen train-set z-params)",
+            "Logistic external (frozen train-set z-params)"),
+  auc = c(auc.ann_f, auc.glm_f),
+  ci_low = c(ci.ann_f[1], ci.glm_f[1]),
+  ci_high = c(ci.ann_f[3], ci.glm_f[3]))
+write.csv(res, file.path(supp, "Table_S37_frozen_zscore_external.csv"), row.names = FALSE)
+write.csv(res, file.path(out99, "frozen_zscore_external.csv"),        row.names = FALSE)
+cat("=== frozen z-score external AUC ===\n"); print(res)
+cat("reference: cohort-internal z ANN 0.820 / logistic 0.841; raw direct 0.772\n")

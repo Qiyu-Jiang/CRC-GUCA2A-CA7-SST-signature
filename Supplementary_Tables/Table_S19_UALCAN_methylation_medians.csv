@@ -1,0 +1,4 @@
+"gene","normal_median","tumor_median"
+"GUCA2A",0.392,0.343
+"CA7",0.159,0.144
+"SST",0.407,0.418

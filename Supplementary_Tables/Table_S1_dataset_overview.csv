@@ -1,0 +1,8 @@
+﻿Role,GEO accession,Platform,Normal (n),Tumour (n),Notes
+Training,GSE22598,GPL570,17,17,17 paired samples
+Training,GSE33113,GPL570,6,90,Tumours AJCC stage II; source processing MAS5
+Training,GSE41328,GPL570,10,10,10 paired samples
+Training total,,GPL570,33,117,"ComBat batch correction; 22,876 genes"
+External validation,GSE110224,GPL570,17,17,17 paired tumour/adjacent-normal samples
+scRNA-seq,GSE289314,10x Genomics,7,7,"59,632 cells x 22,142 genes after QC"
+Survival/mutation/CNA,TCGA-COADREAD (coadread_tcga_pub),RNA-Seq / WES,,,cBioPortal API; KM n=242

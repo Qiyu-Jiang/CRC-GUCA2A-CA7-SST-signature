@@ -1,0 +1,21 @@
+"group","pathway","prob"
+"EpiSigHigh","B cells",2.15357988018535
+"EpiSigHigh","CD4 T cells",2.31242449622109
+"EpiSigHigh","CD8 T cells",2.36746436092551
+"EpiSigHigh","Endothelial cells",2.23663119093962
+"EpiSigHigh","EpiSigHigh",0.921153928320802
+"EpiSigHigh","Fibroblasts",1.61048474608885
+"EpiSigHigh","HSC",2.05529035048551
+"EpiSigHigh","Monocytes",2.15061237679668
+"EpiSigHigh","Neurons",1.26951461979644
+"EpiSigHigh","T cells",2.30760029465718
+"EpiSigLow","B cells",2.15357988018535
+"EpiSigLow","CD4 T cells",2.31242449622109
+"EpiSigLow","CD8 T cells",2.36746436092551
+"EpiSigLow","Endothelial cells",2.23663119093962
+"EpiSigLow","EpiSigLow",1.54230620147318
+"EpiSigLow","Fibroblasts",1.61048474608885
+"EpiSigLow","HSC",2.05529035048551
+"EpiSigLow","Monocytes",2.15061237679668
+"EpiSigLow","Neurons",1.26951461979644
+"EpiSigLow","T cells",2.30760029465718
