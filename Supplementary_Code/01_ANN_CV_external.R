@@ -1,6 +1,6 @@
 ## ============================================================
 ## P0-1  ANN 内部 10 折交叉验证 + GSE110224 外部验证 + logistic 对比
-## 输出: 99.P0/01.ANN_CV_external/
+## 输出: outputs/phase0/01.ANN_CV_external/
 ##   ROC_insample_repro.pdf   原模型(raw)训练集内 AUC 复现
 ##   ROC_CV.pdf               10 折交叉验证 ROC（模型级）
 ##   ROC_external.pdf         外部验证 ROC：ANN(z-score) / ANN(raw直推) / logistic
@@ -12,8 +12,8 @@
 ## ============================================================
 suppressMessages({library(neuralnet); library(pROC)})
 set.seed(123)
-root   <- "F:/232机器学习联合神经网络/CRC"
-outdir <- file.path(root, "99.P0", "01.ANN_CV_external")
+root   <- "./"
+outdir <- file.path(root, "outputs/phase0", "01.ANN_CV_external")
 dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
 genes3 <- c("GUCA2A", "CA7", "SST")
 cat("== P0-1 start ==\n")

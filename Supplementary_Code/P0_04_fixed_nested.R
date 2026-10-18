@@ -4,14 +4,14 @@
 ## a standard (leak-free) CV of the 3-gene model. 5 fold-partition seeds x 10 folds.
 ## Fold-level z-scoring: parameters computed within each training fold.
 ## ANN identical architecture to the original (3-5-2 -> hidden=5).
-## Outputs -> 99.P0/04_fixed_nested_cv/
+## Outputs -> outputs/phase0/04_fixed_nested_cv/
 ##   fixed_nested_by_seed.csv   per-seed pooled AUC/acc/sens/spec/PR-AUC
 ##   fixed_nested_summary.csv   mean +/- SD across 5 seeds
 ##   fixed_predictions_seed123.csv  sample-level predictions (seed 123)
 ## ============================================================
 suppressMessages({library(neuralnet); library(pROC)})
-root <- "F:/232\u673a\u5668\u5b66\u4e60\u8054\u5408\u795e\u7ecf\u7f51\u7edc/CRC"
-outdir <- file.path(root, "99.P0", "04_fixed_nested_cv")
+root <- "./"
+outdir <- file.path(root, "outputs/phase0", "04_fixed_nested_cv")
 dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
 cat("== P0-4 fixed-gene nested CV start ==\n")
 

@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../07.boxplot (x1)
-## 原始文件: F:/232机器学习联合神经网络/CRC/07.boxplot/geo07.boxplot.R (原编码 gbk)
+## [FIXED P0-3] 修正说明: setwd -> (project)/07.boxplot (x1)
+## 原始文件: .//07.boxplot/geo07.boxplot.R (原编码 gbk)
 ######Video source: https://ke.biowolf.cn
 ######生信自学网: https://www.biowolf.cn/
 ######微信公众号：biowolf_cn
@@ -14,7 +14,7 @@
 library(reshape2)
 library(ggplot2)
 
-setwd("F:/232机器学习联合神经网络/CRC/07.boxplot")     #设置工作目录
+setwd(".//07.boxplot")     #设置工作目录
 
 #定义箱线图的函数
 bioBoxplot=function(inputFile=null, outFile=null, titleName=null){

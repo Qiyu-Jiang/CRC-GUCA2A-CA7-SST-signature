@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../19.RF (x1); enabled set.seed(123) (x1)
-## 原始文件: F:/232机器学习联合神经网络/CRC/19.RF/neuralML19.randomForest.R (原编码 utf-8-sig)
+## [FIXED P0-3] 修正说明: setwd -> (project)/19.RF (x1); enabled set.seed(123) (x1)
+## 原始文件: .//19.RF/neuralML19.randomForest.R (原编码 utf-8-sig)
 ######Video source: https://ke.biowolf.cn
 ######生信自学网: https://www.biowolf.cn/
 ######微信公众号：biowolf_cn
@@ -18,7 +18,7 @@ library(ggplot2)
 
 expFile="merge.normalize.txt"      #表达数据文件
 geneFile="hubGenes.txt"             #核心基因的文件
-setwd("F:/232机器学习联合神经网络/CRC/19.RF")      #设置工作目录
+setwd(".//19.RF")      #设置工作目录
 
 #读取表达数据文件
 rt=read.table(expFile, header=T, sep="\t", check.names=F)

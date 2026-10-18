@@ -2,7 +2,7 @@
 """Charoentong 2017 (PMC5215856) supplementary files via Europe PMC (Range-resumable)."""
 import requests, re, os, subprocess, json
 
-OUT = r"F:\232机器学习联合神经网络\CRC\99.P1\09.charoentong"
+OUT = r".\outputs/phase1\09.charoentong"
 os.makedirs(OUT, exist_ok=True)
 PMCID = "PMC5215856"
 

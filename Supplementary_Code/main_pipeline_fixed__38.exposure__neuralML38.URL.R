@@ -1,8 +1,8 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../38.exposure (x1)
-## 原始文件: F:/232机器学习联合神经网络/CRC/38.exposure/neuralML38.URL.R (原编码 gbk)
+## [FIXED P0-3] 修正说明: setwd -> (project)/38.exposure (x1)
+## 原始文件: .//38.exposure/neuralML38.URL.R (原编码 gbk)
 refFile="IEU.ref.txt"        #数据库的参考文件
 geneFile="interFeatureGenes.txt"     #交集特征基因的文件
-setwd("F:/232机器学习联合神经网络/CRC/38.exposure")     #设置工作目录
+setwd(".//38.exposure")     #设置工作目录
 
 #读取数据库的参考文件
 refRT=read.csv(refFile, header=T, sep="\t", check.names=F)

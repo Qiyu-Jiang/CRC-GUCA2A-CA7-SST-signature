@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../18.SVM (x1); enabled set.seed(123) (x1)
-## 原始文件: F:/232机器学习联合神经网络/CRC/18.SVM/neuralML18.SVM.R (原编码 gbk)
+## [FIXED P0-3] 修正说明: setwd -> (project)/18.SVM (x1); enabled set.seed(123) (x1)
+## 原始文件: .//18.SVM/neuralML18.SVM.R (原编码 gbk)
 #install.packages("e1071")
 
 
@@ -10,7 +10,7 @@ library(e1071)
 
 expFile="merge.normalize.txt"      #表达数据文件
 geneFile="hubGenes.txt"             #核心基因的文件
-setwd("F:/232机器学习联合神经网络/CRC/18.SVM")      #设置工作目录
+setwd(".//18.SVM")      #设置工作目录
 source("neuralML18.msvmRFE.R")
 
 #读取表达数据文件

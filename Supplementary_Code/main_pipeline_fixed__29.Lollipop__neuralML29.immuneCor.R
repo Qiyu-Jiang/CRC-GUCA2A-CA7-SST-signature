@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../29.Lollipop (x1)
-## 原始文件: F:/232机器学习联合神经网络/CRC/29.Lollipop/neuralML29.immuneCor.R (原编码 gbk)
+## [FIXED P0-3] 修正说明: setwd -> (project)/29.Lollipop (x1)
+## 原始文件: .//29.Lollipop/neuralML29.immuneCor.R (原编码 gbk)
 ######Video source: https://ke.biowolf.cn
 ######生信自学网: https://www.biowolf.cn/
 ######微信公众号：biowolf_cn
@@ -24,7 +24,7 @@ library(ggExtra)
 expFile="merge.normalize.txt"         #表达数据文件
 geneFile="interFeatureGenes.txt"      #基因列表文件
 immFile="CIBERSORT-Results.txt"       #免疫细胞浸润结果文件
-setwd("F:/232机器学习联合神经网络/CRC/29.Lollipop")     #设置工作目录
+setwd(".//29.Lollipop")     #设置工作目录
 
 #读取表达数据文件,并对数据进行处理
 rt=read.table(expFile, header=T, sep="\t", check.names=F)

@@ -1,6 +1,6 @@
 ## ============================================================
 ## P0-3 Nested CV + multi-seed consensus (addresses review M1/M2/M3)
-## Outputs -> 99.P0/03_nested_cv/
+## Outputs -> outputs/phase0/03_nested_cv/
 ##   nested_cv_predictions.csv   held-out predictions (10 folds)
 ##   nested_cv_metrics.csv       AUC(DeLong) + acc + sens/spec(Youden) + PR-AUC
 ##   fold_features.csv           per-fold selected features (LASSO/SVM/RF/intersection)
@@ -14,8 +14,8 @@
 suppressMessages({library(limma); library(glmnet); library(e1071); library(randomForest)
                   library(neuralnet); library(pROC)})
 set.seed(123)
-root <- "F:/232\u673a\u5668\u5b66\u4e60\u8054\u5408\u795e\u7ecf\u7f51\u7edc/CRC"
-outdir <- file.path(root, "99.P0", "03_nested_cv")
+root <- "./"
+outdir <- file.path(root, "outputs/phase0", "03_nested_cv")
 dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
 cat("== P0-3 nested CV start ==\n")
 

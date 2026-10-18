@@ -1,7 +1,7 @@
 ﻿# SUBMISSION_SUPP - supplementary package README
 
 CRC three-gene signature (GUCA2A/CA7/SST) study - supplementary materials and code for journal upload.
-Generated 2026-09-10; last updated 2026-10-08 (added Tables S36-S37 and the post-review sensitivity scripts 14/14b; all numbers verified against 99.P0 / 99.P1 archives).
+Generated 2026-09-10; last updated 2026-10-08 (added Tables S36-S37 and the post-review sensitivity scripts 14/14b; all numbers verified against the project archives).
 
 ## Supplementary_Figures (17 files)
 - Figure S1: PCA before/after ComBat batch correction (training cohort, top-2000 MAD genes)
@@ -68,7 +68,7 @@ Python 3.13 (requests, openpyxl, pypdf). AutoDock Vina 1.2.7 standalone (downloa
 - GDC (api.gdc.cancer.gov) returned persistent 500 errors during the retry window; the raw-count matrix was replaced by
   GEPIA2 screenshots (Figure panels) + cBioPortal data. Re-run 10_cbioportal_api_pull.py + a GDC manifest query when the server recovers.
 - cellchat_diff.pdf is a placeholder (netVisual_diff is unavailable in CellChat 2.1.2); rankNet and bubble cover the comparison.
-- Browser-verification screenshots (GEPIA2/UALCAN source pages) are kept under 99.P1\06.* and are not part of this package.
+- Browser-verification screenshots (GEPIA2/UALCAN source pages) are kept under project archive\06.* and are not part of this package.
 
 ## Citation
 

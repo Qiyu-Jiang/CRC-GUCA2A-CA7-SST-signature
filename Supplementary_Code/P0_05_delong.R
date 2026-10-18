@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # P0-5: DeLong tests + external PR-AUC (3rd-party M5/P0-7)
 suppressMessages({library(pROC)})
-root <- "F:/232\u673a\u5668\u5b66\u4e60\u8054\u5408\u795e\u7ecf\u7f51\u7edc/CRC"
-outdir <- file.path(root, "99.P0", "05_delong_tests")
+root <- "./"
+outdir <- file.path(root, "outputs/phase0", "05_delong_tests")
 dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
 cat("== P0-5 DeLong tests ==\n")
 
@@ -19,7 +19,7 @@ grp2 <- sub(".*_(Control|Treat)$", "\\1", colnames(ext))
 y2 <- ifelse(grp2 == "Treat", 1L, 0L)
 
 # per-sample predictions from P0_01
-pred <- read.csv(file.path(root, "99.P0", "01.ANN_CV_external", "predictions_external.csv"))
+pred <- read.csv(file.path(root, "outputs/phase0", "01.ANN_CV_external", "predictions_external.csv"))
 # align by sample order (predictions_external uses colnames(ext) order)
 stopifnot(nrow(pred) == length(y2))
 

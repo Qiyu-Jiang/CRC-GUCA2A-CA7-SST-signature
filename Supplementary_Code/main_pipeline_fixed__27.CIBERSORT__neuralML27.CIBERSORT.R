@@ -1,5 +1,5 @@
 ## [FIXED P0-3] 修正说明: 仅路径规范化
-## 原始文件: F:/232机器学习联合神经网络/CRC/27.CIBERSORT/neuralML27.CIBERSORT.R (原编码 utf-8-sig)
+## 原始文件: .//27.CIBERSORT/neuralML27.CIBERSORT.R (原编码 utf-8-sig)
 #' CIBERSORT R script v1.03
 #' Note: Signature matrix construction is not currently available; use java version for full functionality.
 #' Author: Aaron M. Newman, Stanford University (amnewman@stanford.edu)

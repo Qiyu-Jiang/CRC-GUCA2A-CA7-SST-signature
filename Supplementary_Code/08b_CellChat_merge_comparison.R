@@ -1,7 +1,7 @@
 ## P1-6b CellChat 比较（修复版）：读入已算好的 high/low 对象，cell.prefix=TRUE 合并出图
 suppressMessages({library(CellChat); library(ggplot2)})
-root   <- "F:/232机器学习联合神经网络/CRC"
-outdir <- file.path(root, "99.P1", "07.cellchat")
+root   <- "./"
+outdir <- file.path(root, "outputs/phase1", "07.cellchat")
 cat("== P1-6b start ==\n")
 
 ccH <- readRDS(file.path(outdir, "cellchat_high.rds"))

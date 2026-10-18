@@ -1,5 +1,5 @@
 ## [FIXED P0-3] 修正说明: 仅路径规范化
-## 原始文件: F:/232机器学习联合神经网络/CRC/32.Seurat/neuralML32.Seurat.R (原编码 gbk)
+## 原始文件: .//32.Seurat/neuralML32.Seurat.R (原编码 gbk)
 ######Video source: https://ke.biowolf.cn
 ######生信自学网: https://www.biowolf.cn/
 ######微信公众号：biowolf_cn
@@ -44,7 +44,7 @@ logFCfilter=1           #logFC的过滤条件
 adjPvalFilter=0.05     #矫正后的pvalue的过滤条件
 
 #设置工作目录
-workDir="C:\\biowolf\\neuralML\\32.Seurat"
+workDir=".\\32.Seurat"
 setwd(workDir)
 
 #读取数据

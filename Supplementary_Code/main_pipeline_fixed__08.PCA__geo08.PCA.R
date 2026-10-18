@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../08.PCA (x1)
-## 原始文件: F:/232机器学习联合神经网络/CRC/08.PCA/geo08.PCA.R (原编码 gbk)
+## [FIXED P0-3] 修正说明: setwd -> (project)/08.PCA (x1)
+## 原始文件: .//08.PCA/geo08.PCA.R (原编码 gbk)
 ######Video source: https://ke.biowolf.cn
 ######生信自学网: https://www.biowolf.cn/
 ######微信公众号：biowolf_cn
@@ -13,7 +13,7 @@
 #引用包
 library(ggplot2)
 library(ggpubr)
-setwd("F:/232机器学习联合神经网络/CRC/08.PCA")    #设置工作目录
+setwd(".//08.PCA")    #设置工作目录
 
 #定义PCA分析的函数
 bioPCA=function(inputFile=null, outFile=null, titleName=null){

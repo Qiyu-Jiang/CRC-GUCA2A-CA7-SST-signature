@@ -1,5 +1,5 @@
 ## P1-8 UALCAN 启动子甲基化五数概括 -> 出版级分组箱图（bxp 版）
-root <- "F:/232机器学习联合神经网络/CRC/99.P1"
+root <- ".//outputs/phase1"
 outdir <- file.path(root, "06.ualcan")
 d <- read.csv(file.path(outdir, "ualcan_methylation_boxstats.csv"), stringsAsFactors = FALSE)
 genes <- c("GUCA2A", "CA7", "SST")

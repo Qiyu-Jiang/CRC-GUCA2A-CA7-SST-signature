@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../28.barplot (x1)
-## 原始文件: F:/232机器学习联合神经网络/CRC/28.barplot/neuralML28.barplot.R (原编码 gbk)
+## [FIXED P0-3] 修正说明: setwd -> (project)/28.barplot (x1)
+## 原始文件: .//28.barplot/neuralML28.barplot.R (原编码 gbk)
 ######Video source: https://ke.biowolf.cn
 ######生信自学网: https://www.biowolf.cn/
 ######微信公众号：biowolf_cn
@@ -17,7 +17,7 @@ library(ggpubr)
 library(corrplot)
 
 inputFile="CIBERSORT-Results.txt"     #免疫细胞浸润分析的结果文件
-setwd("F:/232机器学习联合神经网络/CRC/28.barplot")     #设置工作目录
+setwd(".//28.barplot")     #设置工作目录
 
 #读取免疫细胞浸润文件
 rt=read.table(inputFile, header=T, sep="\t", check.names=F, row.names=1)

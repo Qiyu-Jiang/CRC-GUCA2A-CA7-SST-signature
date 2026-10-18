@@ -1,11 +1,11 @@
 ## ============================================================
 ## P0-3  特征筛选可复现性核查：锁定 set.seed 后重跑 LASSO/SVM-RFE/RF
 ##       在全量训练集（150 样本）上 × 3 个种子，与原始输出对比
-## 输出: 99.P0/03.feature_stability/
+## 输出: outputs/phase0/03.feature_stability/
 ## ============================================================
 suppressMessages({library(glmnet); library(randomForest); library(e1071)})
-root   <- "F:/232机器学习联合神经网络/CRC"
-outdir <- file.path(root, "99.P0", "03.feature_stability")
+root   <- "./"
+outdir <- file.path(root, "outputs/phase0", "03.feature_stability")
 dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
 hub <- readLines(file.path(root, "16.hubGene", "hubGenes.txt"))
 source(file.path(root, "18.SVM", "neuralML18.msvmRFE.R"), encoding = "UTF-8")

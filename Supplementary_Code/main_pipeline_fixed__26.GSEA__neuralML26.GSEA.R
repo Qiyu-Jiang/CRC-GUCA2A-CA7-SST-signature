@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../26.GSEA (x1)
-## 原始文件: F:/232机器学习联合神经网络/CRC/26.GSEA/neuralML26.GSEA.R (原编码 gbk)
+## [FIXED P0-3] 修正说明: setwd -> (project)/26.GSEA (x1)
+## 原始文件: .//26.GSEA/neuralML26.GSEA.R (原编码 gbk)
 ######Video source: https://ke.biowolf.cn
 ######生信自学网: https://www.biowolf.cn/
 ######微信公众号：biowolf_cn
@@ -24,7 +24,7 @@ library(enrichplot)
 expFile="merge.normalize.txt"           #表达数据文件
 geneFile="interFeatureGenes.txt"       #基因列表文件
 gmtFile="c2.cp.kegg.Hs.symbols.gmt"    #基因集文件
-setwd("F:/232机器学习联合神经网络/CRC/26.GSEA")      #设置工作目录
+setwd(".//26.GSEA")      #设置工作目录
 
 #读取文件,并对输入文件进行整理
 rt=read.table(expFile, header=T, sep="\t", check.names=F)

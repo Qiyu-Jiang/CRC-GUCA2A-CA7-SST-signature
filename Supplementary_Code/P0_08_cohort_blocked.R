@@ -1,6 +1,6 @@
 suppressMessages({library(neuralnet); library(pROC)})
-root <- "F:/232\u673a\u5668\u5b66\u4e60\u8054\u5408\u795e\u7ecf\u7f51\u7edc/CRC"
-outdir <- file.path(root, "99.P0", "06_patient_blocked_cv")
+root <- "./"
+outdir <- file.path(root, "outputs/phase0", "06_patient_blocked_cv")
 dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
 cat("== P0-8 v2: cohort-blocked CV ==\n")
 

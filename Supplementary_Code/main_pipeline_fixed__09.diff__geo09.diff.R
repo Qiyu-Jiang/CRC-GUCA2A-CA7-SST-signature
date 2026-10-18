@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../09.diff (x1); logFCfilter 0.585 -> 2 (per 过滤条件.txt)
-## 原始文件: F:/232机器学习联合神经网络/CRC/09.diff/geo09.diff.R (原编码 gbk)
+## [FIXED P0-3] 修正说明: setwd -> (project)/09.diff (x1); logFCfilter 0.585 -> 2 (per 过滤条件.txt)
+## 原始文件: .//09.diff/geo09.diff.R (原编码 gbk)
 ######Video source: https://ke.biowolf.cn
 ######生信自学网: https://www.biowolf.cn/
 ######微信公众号：biowolf_cn
@@ -23,7 +23,7 @@ library(ggplot2)
 logFCfilter = 2          #logFC的过滤条件(logFC=0.585,差异倍数1.5倍;logFC=1,差异2倍;logFC=2,差异4倍)
 adj.P.Val.Filter=0.05     #矫正后p值的过滤条件
 inputFile="merge.normalize.txt"      #表达数据文件
-setwd("F:/232机器学习联合神经网络/CRC/09.diff")      #设置工作目录
+setwd(".//09.diff")      #设置工作目录
 
 #读取输入文件，并对输入文件整理
 rt=read.table(inputFile, header=T, sep="\t", check.names=F)

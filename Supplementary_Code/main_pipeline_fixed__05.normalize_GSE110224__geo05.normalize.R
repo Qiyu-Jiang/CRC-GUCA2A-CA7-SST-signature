@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../05.normalize/GSE110224 (x1); geoID -> GSE110224
-## 原始文件: F:/232机器学习联合神经网络/CRC/05.normalize/GSE110224/geo05.normalize.R (原编码 gbk)
+## [FIXED P0-3] 修正说明: setwd -> (project)/05.normalize/GSE110224 (x1); geoID -> GSE110224
+## 原始文件: .//05.normalize/GSE110224/geo05.normalize.R (原编码 gbk)
 ######Video source: https://ke.biowolf.cn
 ######生信自学网: https://www.biowolf.cn/
 ######微信公众号：biowolf_cn
@@ -18,7 +18,7 @@ inputFile="geneMatrix.txt"     #表达数据文件
 conFile="s1.txt"               #对照组的样品信息文件
 treatFile="s2.txt"             #实验组的样品信息文件
 geoID = "GSE110224"                #GEO数据库研究的id
-setwd("F:/232机器学习联合神经网络/CRC/05.normalize/GSE110224")      #设置工作目录
+setwd(".//05.normalize/GSE110224")      #设置工作目录
 
 #读取输入文件，并对输入文件整理
 rt=read.table(inputFile, header=T, sep="\t", check.names=F)

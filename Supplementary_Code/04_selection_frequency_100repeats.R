@@ -1,10 +1,10 @@
 ## ============================================================
 ## P1-5  特征选择频率稳定性：LASSO + RF × 100 次（80% 分层子样本）
-## 输出: 99.P1/05.selection_freq/{selection_frequency.csv, selection_freq_barplot.pdf}
+## 输出: outputs/phase1/05.selection_freq/{selection_frequency.csv, selection_freq_barplot.pdf}
 ## ============================================================
 suppressMessages({library(glmnet); library(randomForest)})
-root   <- "F:/232机器学习联合神经网络/CRC"
-outdir <- file.path(root, "99.P1", "05.selection_freq")
+root   <- "./"
+outdir <- file.path(root, "outputs/phase1", "05.selection_freq")
 dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
 hub <- readLines(file.path(root, "16.hubGene", "hubGenes.txt"))
 genes3 <- c("GUCA2A", "CA7", "SST")

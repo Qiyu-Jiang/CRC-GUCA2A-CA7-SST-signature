@@ -1,11 +1,11 @@
 ## [FIXED P0-3] 修正说明: 仅路径规范化
-## 原始文件: F:/232机器学习联合神经网络/CRC/16.hubGene/neuralML16.venn.R (原编码 gbk)
+## 原始文件: .//16.hubGene/neuralML16.venn.R (原编码 gbk)
 #install.packages("ggvenn")
 
 
 library(ggvenn)      #引用包
 scoreFile="score.csv"     #输入文件
-setwd("C:\\Users\\Administrator\\Desktop\\neuralML\\16.hubGene")     #设置工作目录
+setwd(".\\16.hubGene")     #设置工作目录
 
 #读取输入文件
 rt=read.csv(scoreFile, header=T, sep=",", check.names=F, row.names=1)

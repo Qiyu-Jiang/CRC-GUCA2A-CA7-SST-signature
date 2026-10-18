@@ -1,5 +1,5 @@
 ## [FIXED P0-3] 修正说明: 仅路径规范化
-## 原始文件: F:/232机器学习联合神经网络/CRC/33.geneView/neuralML33.view.R (原编码 gbk)
+## 原始文件: .//33.geneView/neuralML33.view.R (原编码 gbk)
 ######Video source: https://ke.biowolf.cn
 ######生信自学网: https://www.biowolf.cn/
 ######微信公众号：biowolf_cn
@@ -42,7 +42,7 @@ library(assertthat)
 library(SCpubr)
 
 #设置工作目录
-workDir="C:\\biowolf\\neuralML\\33.geneView"
+workDir=".\\33.geneView"
 setwd(workDir)
 load("Seurat.Rdata")
 

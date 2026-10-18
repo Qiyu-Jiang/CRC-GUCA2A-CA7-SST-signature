@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../10.WGCNA (x1)
-## 原始文件: F:/232机器学习联合神经网络/CRC/10.WGCNA/geo10.WGCNA.R (原编码 utf-8-sig)
+## [FIXED P0-3] 修正说明: setwd -> (project)/10.WGCNA (x1)
+## 原始文件: .//10.WGCNA/geo10.WGCNA.R (原编码 utf-8-sig)
 ######Video source: https://ke.biowolf.cn
 ######生信自学网: https://www.biowolf.cn/
 ######微信公众号：biowolf_cn
@@ -19,7 +19,7 @@ library(limma)
 library(WGCNA)
 
 expFile="merge.normalize.txt"      #表达数据文件
-setwd("F:/232机器学习联合神经网络/CRC/10.WGCNA")     #设置工作目录
+setwd(".//10.WGCNA")     #设置工作目录
 
 #读取输入文件，并对输入文件整理
 rt=read.table(expFile, header=T, sep="\t", check.names=F)

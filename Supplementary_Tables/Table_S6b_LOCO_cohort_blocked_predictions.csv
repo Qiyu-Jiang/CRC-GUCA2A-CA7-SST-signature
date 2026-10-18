@@ -1,4 +1,4 @@
-sample,cohort,y (1=tumour),ANN predicted P(Tumour)
+﻿sample,cohort,y (1=tumour),ANN predicted score (logit scale; not calibrated)
 GSE22598_GSM452629_Control,GSE22598,0,1.00394081282958
 GSE22598_GSM452630_Control,GSE22598,0,1.00918732359741
 GSE22598_GSM452631_Control,GSE22598,0,-0.00713361207577206

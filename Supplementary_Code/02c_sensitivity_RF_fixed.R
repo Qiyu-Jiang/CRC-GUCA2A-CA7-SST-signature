@@ -2,8 +2,8 @@
 ## 用法: Rscript P0_02c.rf_fix.R <seed>
 suppressMessages({library(limma); library(sva); library(glmnet); library(randomForest)})
 args <- commandArgs(trailingOnly = TRUE); sd <- as.integer(args[1])
-root   <- "F:/232机器学习联合神经网络/CRC"
-outdir <- file.path(root, "99.P0", "02.sensitivity")
+root   <- "./"
+outdir <- file.path(root, "outputs/phase0", "02.sensitivity")
 genes3 <- c("GUCA2A", "CA7", "SST")
 hub <- readLines(file.path(root, "16.hubGene", "hubGenes.txt"))
 tp <- function(cn) sub(".*_(Control|Treat)$", "\\1", cn)

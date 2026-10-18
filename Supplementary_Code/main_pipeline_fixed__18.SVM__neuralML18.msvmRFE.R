@@ -1,5 +1,5 @@
 ## [FIXED P0-3] 修正说明: 仅路径规范化
-## 原始文件: F:/232机器学习联合神经网络/CRC/18.SVM/neuralML18.msvmRFE.R (原编码 utf-8-sig)
+## 原始文件: .//18.SVM/neuralML18.msvmRFE.R (原编码 utf-8-sig)
 svmRFE.wrap <- function(test.fold, X, ...) {
 # Wrapper to run svmRFE function while omitting a given test fold
     train.data = X[-test.fold, ]

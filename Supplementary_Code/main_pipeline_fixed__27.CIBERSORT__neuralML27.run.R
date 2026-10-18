@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../27.CIBERSORT (x1)
-## 原始文件: F:/232机器学习联合神经网络/CRC/27.CIBERSORT/neuralML27.run.R (原编码 gbk)
+## [FIXED P0-3] 修正说明: setwd -> (project)/27.CIBERSORT (x1)
+## 原始文件: .//27.CIBERSORT/neuralML27.run.R (原编码 gbk)
 #install.packages('e1071')
 
 #if (!requireNamespace("BiocManager", quietly = TRUE))
@@ -8,7 +8,7 @@
 
 
 inputFile="merge.normalize.txt"      #表达数据文件
-setwd("F:/232机器学习联合神经网络/CRC/27.CIBERSORT")      #设置工作目录
+setwd(".//27.CIBERSORT")      #设置工作目录
 source("neuralML27.CIBERSORT.R")       #引用包
 
 #免疫细胞浸润分析

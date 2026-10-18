@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../20.venn (x1)
-## 原始文件: F:/232机器学习联合神经网络/CRC/20.venn/neuralML20.venn.R (原编码 gbk)
+## [FIXED P0-3] 修正说明: setwd -> (project)/20.venn (x1)
+## 原始文件: .//20.venn/neuralML20.venn.R (原编码 gbk)
 ######Video source: https://ke.biowolf.cn
 ######生信自学网: https://www.biowolf.cn/
 ######微信公众号：biowolf_cn
@@ -12,7 +12,7 @@
 #引用包
 library(ggvenn)
 
-setwd("F:/232机器学习联合神经网络/CRC/20.venn")    #设置工作目录
+setwd(".//20.venn")    #设置工作目录
 files=list.files(pattern="*.txt$")     #获取目录下txt结尾的文件
 geneList=list()
 

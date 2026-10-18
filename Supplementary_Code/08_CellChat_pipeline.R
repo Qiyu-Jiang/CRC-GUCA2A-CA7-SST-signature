@@ -3,11 +3,11 @@
 ## 设计：上皮细胞按 GUCA2A+CA7+SST 联合评分分为 Epi_SigHigh / Epi_SigLow，
 ##       其余 9 种细胞为共享背景；每组下采样 ≤2000 细胞；
 ##       跑 high / low 两个 CellChat 对象并 merge 比较（rankNet + diff + bubble）
-## 输出: 99.P1/07.cellchat/
+## 输出: outputs/phase1/07.cellchat/
 ## ============================================================
 suppressMessages({library(Seurat); library(CellChat); library(future); library(ggplot2)})
-root   <- "F:/232机器学习联合神经网络/CRC"
-outdir <- file.path(root, "99.P1", "07.cellchat")
+root   <- "./"
+outdir <- file.path(root, "outputs/phase1", "07.cellchat")
 dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
 sig <- c("GUCA2A", "CA7", "SST")
 plan("multisession", workers = 4)

@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../41.drugEnrich (x1)
-## 原始文件: F:/232机器学习联合神经网络/CRC/41.drugEnrich/neuralML41.drugEnrich.R (原编码 gbk)
+## [FIXED P0-3] 修正说明: setwd -> (project)/41.drugEnrich (x1)
+## 原始文件: .//41.drugEnrich/neuralML41.drugEnrich.R (原编码 gbk)
 ######Video source: https://ke.biowolf.cn
 ######生信自学网: https://www.biowolf.cn/
 ######微信公众号：biowolf_cn
@@ -37,7 +37,7 @@ if(adjPvalFilter>0.05){
 
 drugFile="DSigDB_All_detailed.txt"      #药物和基因的关系文件
 hubFile="interFeatureGenes.txt"          #交集特征基因的文件
-setwd("F:/232机器学习联合神经网络/CRC/41.drugEnrich")      #设置工作目录
+setwd(".//41.drugEnrich")      #设置工作目录
 
 #读取交集特征基因的列表文件
 rt=read.table(hubFile, header=F, sep="\t", check.names=F)

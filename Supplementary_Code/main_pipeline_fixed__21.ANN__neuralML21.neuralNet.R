@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../21.ANN (x1)
-## 原始文件: F:/232机器学习联合神经网络/CRC/21.ANN/neuralML21.neuralNet.R (原编码 utf-8-sig)
+## [FIXED P0-3] 修正说明: setwd -> (project)/21.ANN (x1)
+## 原始文件: .//21.ANN/neuralML21.neuralNet.R (原编码 utf-8-sig)
 ######Video source: https://ke.biowolf.cn
 ######生信自学网: https://www.biowolf.cn/
 ######微信公众号：biowolf_cn
@@ -20,7 +20,7 @@ set.seed(123)
 
 expFile="merge.normalize.txt"           #表达数据文件
 geneFile="interFeatureGenes.txt"       #交集特征基因的文件
-setwd("F:/232机器学习联合神经网络/CRC/21.ANN")      #设置工作目录
+setwd(".//21.ANN")      #设置工作目录
 
 #读取表达数据文件
 rt=read.table(expFile, header=T, sep="\t", check.names=F)

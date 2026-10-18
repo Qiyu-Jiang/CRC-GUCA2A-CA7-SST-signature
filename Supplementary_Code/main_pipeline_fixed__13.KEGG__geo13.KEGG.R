@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../13.KEGG (x1)
-## 原始文件: F:/232机器学习联合神经网络/CRC/13.KEGG/geo13.KEGG.R (原编码 gbk)
+## [FIXED P0-3] 修正说明: setwd -> (project)/13.KEGG (x1)
+## 原始文件: .//13.KEGG/geo13.KEGG.R (原编码 gbk)
 ######Video source: https://ke.biowolf.cn
 ######生信自学网: https://www.biowolf.cn/
 ######微信公众号：biowolf_cn
@@ -33,7 +33,7 @@ if(adjPvalFilter>0.05){
 	colorSel="pvalue"
 }
 
-setwd("F:/232机器学习联合神经网络/CRC/13.KEGG")      #设置工作目录
+setwd(".//13.KEGG")      #设置工作目录
 rt=read.table("interGenes.txt", header=F, sep="\t", check.names=F)     #读取交集基因的列表文件
 
 #提取基因的名称, 将基因名称转换为基因id

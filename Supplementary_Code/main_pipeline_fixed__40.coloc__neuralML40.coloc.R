@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../40.coloc (x1)
-## 原始文件: F:/232机器学习联合神经网络/CRC/40.coloc/neuralML40.coloc.R (原编码 utf-8-sig)
+## [FIXED P0-3] 修正说明: setwd -> (project)/40.coloc (x1)
+## 原始文件: .//40.coloc/neuralML40.coloc.R (原编码 utf-8-sig)
 #install.packages("dplyr")
 #install.packages("data.table")
 #install.packages("coloc")
@@ -31,7 +31,7 @@ outcomeFile="finngen_R12_AD_EO_EXMORE.gz"     #结局数据文件
 finnAnnFile="finngen_R12_manifest.tsv"         #芬兰数据库的注释表格文件
 
 #设置工作目录
-setwd("F:/232机器学习联合神经网络/CRC/40.coloc")
+setwd(".//40.coloc")
 
 #读取IEU数据库的参考文件
 drugRT=read.table(drugFile, header=T, sep="\t", check.names=F)

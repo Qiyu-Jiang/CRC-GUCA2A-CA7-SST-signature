@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../11.venn (x1)
-## 原始文件: F:/232机器学习联合神经网络/CRC/11.venn/geo11.venn.R (原编码 gbk)
+## [FIXED P0-3] 修正说明: setwd -> (project)/11.venn (x1)
+## 原始文件: .//11.venn/geo11.venn.R (原编码 gbk)
 ######Video source: https://ke.biowolf.cn
 ######生信自学网: https://www.biowolf.cn/
 ######微信公众号：biowolf_cn
@@ -14,7 +14,7 @@ library(ggvenn)
 
 diffFile="diff.txt"                  #差异分析的结果文件
 moduleFile="module_green.txt"      #模块基因的文件
-setwd("F:/232机器学习联合神经网络/CRC/11.venn")     #设置工作目录
+setwd(".//11.venn")     #设置工作目录
 geneList=list()
 
 #读取差异分析的结果文件

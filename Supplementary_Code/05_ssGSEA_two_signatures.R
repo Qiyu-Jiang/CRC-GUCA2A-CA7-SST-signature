@@ -1,17 +1,17 @@
 ## ============================================================
 ## P1-2  ssGSEA 免疫细胞浸润（Senbabaoglu 2016 细胞签名，inRNAseq=YES）
 ##       + 三基因 × 细胞类型 Spearman 相关
-## 输入: F:/.../CRC/06.sva/merge.normalize.txt + immune_cell_type_list.csv
-## 输出: 99.P1/02.ssgsea/{ssGSEA_scores.csv, ssGSEA_boxplot.pdf, ssGSEA_corr_heatmap.pdf, ssGSEA_corr.csv}
+## 输入: (project)/06.sva/merge.normalize.txt + immune_cell_type_list.csv
+## 输出: outputs/phase1/02.ssgsea/{ssGSEA_scores.csv, ssGSEA_boxplot.pdf, ssGSEA_corr_heatmap.pdf, ssGSEA_corr.csv}
 ## ============================================================
 suppressMessages({library(GSVA); library(GSEABase); library(limma); library(pheatmap)})
-root   <- "F:/232机器学习联合神经网络/CRC"
-outdir <- file.path(root, "99.P1", "02.ssgsea")
+root   <- "./"
+outdir <- file.path(root, "outputs/phase1", "02.ssgsea")
 dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
 genes3 <- c("GUCA2A", "CA7", "SST")
 cat("== P1-2 ssGSEA start ==\n")
 
-sets.df <- read.delim(file.path(root, "99.P1", "immune_cell_type_list.tsv"), stringsAsFactors = FALSE)
+sets.df <- read.delim(file.path(root, "outputs/phase1", "immune_cell_type_list.tsv"), stringsAsFactors = FALSE)
 sets.df <- subset(sets.df, inRNAseq == "YES")
 sets.df$Symbol <- sub(" .*", "", sets.df$Symbol)
 cellSets <- lapply(split(sets.df$Symbol, sets.df$Cell_type), function(x) unique(toupper(x)))

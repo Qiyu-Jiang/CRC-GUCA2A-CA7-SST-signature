@@ -3,7 +3,7 @@
 import openpyxl, json, csv
 from collections import OrderedDict
 
-p = r"F:\232机器学习联合神经网络\CRC\99.P1\09.charoentong\mmc3.xlsx"
+p = r".\outputs/phase1\09.charoentong\mmc3.xlsx"
 wb = openpyxl.load_workbook(p, read_only=True)
 ws = wb["Sheet1"]
 rows = list(ws.iter_rows(values_only=True))
@@ -25,10 +25,10 @@ print("cell types:", len(sets))
 for ct, genes in sets.items():
     print(f"  {ct:32s} {len(genes):3d} genes  [{immunity.get(ct,'')}]")
 
-with open(r"F:\232机器学习联合神经网络\CRC\99.P1\02.ssgsea\charoentong28_sets.json", "w", encoding="utf-8") as f:
+with open(r".\outputs/phase1\02.ssgsea\charoentong28_sets.json", "w", encoding="utf-8") as f:
     json.dump({ct: {"genes": gs, "immunity": immunity.get(ct, "")} for ct, gs in sets.items()},
               f, ensure_ascii=False, indent=1)
-with open(r"F:\232机器学习联合神经网络\CRC\99.P1\02.ssgsea\charoentong28.gmt", "w", encoding="utf-8") as f:
+with open(r".\outputs/phase1\02.ssgsea\charoentong28.gmt", "w", encoding="utf-8") as f:
     for ct, gs in sets.items():
         f.write(ct + "\t" + immunity.get(ct, "") + "\t" + "\t".join(gs) + "\n")
 print("saved: charoentong28_sets.json / charoentong28.gmt")

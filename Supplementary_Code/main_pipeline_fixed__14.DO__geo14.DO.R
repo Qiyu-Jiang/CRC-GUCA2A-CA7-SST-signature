@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../14.DO (x1)
-## 原始文件: F:/232机器学习联合神经网络/CRC/14.DO/geo14.DO.R (原编码 gbk)
+## [FIXED P0-3] 修正说明: setwd -> (project)/14.DO (x1)
+## 原始文件: .//14.DO/geo14.DO.R (原编码 gbk)
 ######Video source: https://ke.biowolf.cn
 ######生信自学网: https://www.biowolf.cn/
 ######微信公众号：biowolf_cn
@@ -36,7 +36,7 @@ if(qvalueFilter>0.05){
 	colorSel="pvalue"
 }
 	
-setwd("F:/232机器学习联合神经网络/CRC/14.DO")      #设置工作目录
+setwd(".//14.DO")      #设置工作目录
 rt=read.table("interGenes.txt", header=F, sep="\t", check.names=F)    #读取交集基因的文件
 
 #基因名字转换为基因id

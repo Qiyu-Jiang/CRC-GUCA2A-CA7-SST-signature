@@ -4,7 +4,7 @@ import requests, csv, os, time
 
 H = {'User-Agent': 'Mozilla/5.0 (research)', 'Accept': 'application/json'}
 base = 'https://www.cbioportal.org/api'
-outdir = r'F:\232机器学习联合神经网络\CRC\99.P1'
+outdir = r'.\outputs/phase1'
 os.makedirs(outdir, exist_ok=True)
 
 entrez = {'GUCA2A': 2980, 'CA7': 766, 'SST': 6750, 'PDCD1': 5133, 'CD274': 29126,

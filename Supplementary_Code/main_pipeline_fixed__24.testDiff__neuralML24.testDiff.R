@@ -1,5 +1,5 @@
-## [FIXED P0-3] 修正说明: setwd -> F:/.../24.testDiff (x1); expFile GSE36980 -> GSE110224
-## 原始文件: F:/232机器学习联合神经网络/CRC/24.testDiff/neuralML24.testDiff.R (原编码 gbk)
+## [FIXED P0-3] 修正说明: setwd -> (project)/24.testDiff (x1); expFile GSE36980 -> GSE110224
+## 原始文件: .//24.testDiff/neuralML24.testDiff.R (原编码 gbk)
 ######Video source: https://ke.biowolf.cn
 ######生信自学网: https://www.biowolf.cn/
 ######微信公众号：biowolf_cn
@@ -23,7 +23,7 @@ library(pROC)
 
 expFile = "GSE110224.normalize.txt"      #表达数据文件(需要修改)
 geneFile="interFeatureGenes.txt"      #交集特征基因的文件
-setwd("F:/232机器学习联合神经网络/CRC/24.testDiff")     #设置工作目录
+setwd(".//24.testDiff")     #设置工作目录
 
 #读取表达数据文件
 rt=read.table(expFile, header=T, sep="\t", check.names=F)

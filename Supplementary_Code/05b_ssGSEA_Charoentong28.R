@@ -1,7 +1,7 @@
 ## P1-9 Charoentong 28 免疫细胞签名 ssGSEA（对齐模板的原始基因集）
 suppressMessages({library(GSVA); library(GSEABase); library(pheatmap)})
-root   <- "F:/232机器学习联合神经网络/CRC"
-outdir <- file.path(root, "99.P1", "02.ssgsea")
+root   <- "./"
+outdir <- file.path(root, "outputs/phase1", "02.ssgsea")
 genes3 <- c("GUCA2A", "CA7", "SST")
 cat("== P1-9 start ==\n")
 

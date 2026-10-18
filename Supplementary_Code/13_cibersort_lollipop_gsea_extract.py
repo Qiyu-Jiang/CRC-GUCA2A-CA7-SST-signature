@@ -3,7 +3,7 @@
 import csv, json, os, re
 import statistics
 
-BASE = r"F:\232机器学习联合神经网络\CRC"
+BASE = r"."
 out = {}
 
 # ---------- 1) CIBERSORT fractions: group means + Wilcoxon ----------
@@ -102,6 +102,6 @@ for g in ("GUCA2A", "CA7", "SST"):
     print(f"GSEA {g}: sig={len(sig)} pos={len(pos)} neg={len(neg)}")
 out["gsea"] = gsea
 
-json.dump(out, open(r"D:\Autoclaw\.openclaw\tmp\results_extra.json", "w", encoding="utf-8"),
+json.dump(out, open(r"./outputs/tmp\results_extra.json", "w", encoding="utf-8"),
           ensure_ascii=False, indent=1)
 print("saved results_extra.json")

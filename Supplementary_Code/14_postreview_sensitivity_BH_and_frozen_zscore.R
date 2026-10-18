@@ -1,8 +1,8 @@
 # P0_07.postreview_sensitivity.R  (2026-09-28)
 ## (a) BH correction for immune-checkpoint correlations (per cohort)
 ## (b) Frozen-parameter z-score external validation (deployment-oriented)
-root  <- "F:/232机器学习联合神经网络/CRC"
-out99 <- file.path(root, "99.P0", "07.postreview_sensitivity")
+root  <- "./"
+out99 <- file.path(root, "outputs/phase0", "07.postreview_sensitivity")
 dir.create(out99, showWarnings = FALSE, recursive = TRUE)
 supp  <- file.path(root, "DELIVERY_2026-09-15", "3_GitHub公开资料与投稿上传包",
                    "SUBMISSION_SUPP", "Supplementary_Tables")

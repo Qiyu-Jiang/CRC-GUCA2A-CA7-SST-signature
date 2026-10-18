@@ -5,12 +5,12 @@
 ##      核查 GUCA2A/CA7/SST 的 logFC/adj.P
 ##   C. GSE33113 肿瘤抽样降权(30例) × 3 个种子：ComBat+limma 核查三基因，
 ##      并在 ComBat 后矩阵上重跑 LASSO/SVM-RFE/RF 特征共识
-## 输出: 99.P0/02.sensitivity/
+## 输出: outputs/phase0/02.sensitivity/
 ## ============================================================
 suppressMessages({library(limma); library(sva); library(glmnet);
                   library(randomForest); library(e1071)})
-root   <- "F:/232机器学习联合神经网络/CRC"
-outdir <- file.path(root, "99.P0", "02.sensitivity")
+root   <- "./"
+outdir <- file.path(root, "outputs/phase0", "02.sensitivity")
 dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
 genes3 <- c("GUCA2A", "CA7", "SST")
 hub <- readLines(file.path(root, "16.hubGene", "hubGenes.txt"))

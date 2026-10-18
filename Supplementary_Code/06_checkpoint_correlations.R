@@ -1,10 +1,10 @@
 ## ============================================================
 ## P1-3  免疫检查点/共刺激分子相关性（训练集 150 样本 + TCGA 肿瘤队列）
-## 输出: 99.P1/03.checkpoint/{checkpoint_corr_train.pdf/csv, checkpoint_corr_tcga.pdf/csv}
+## 输出: outputs/phase1/03.checkpoint/{checkpoint_corr_train.pdf/csv, checkpoint_corr_tcga.pdf/csv}
 ## ============================================================
 suppressMessages({library(pheatmap)})
-root   <- "F:/232机器学习联合神经网络/CRC"
-outdir <- file.path(root, "99.P1", "03.checkpoint")
+root   <- "./"
+outdir <- file.path(root, "outputs/phase1", "03.checkpoint")
 dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
 genes3 <- c("GUCA2A", "CA7", "SST")
 ck <- c("PDCD1", "CD274", "CTLA4", "LAG3", "HAVCR2", "TIGIT", "BTLA", "IDO1",
@@ -42,7 +42,7 @@ ex <- as.matrix(rt); storage.mode(ex) <- "numeric"
 corrBlock(ex, "train_merge")
 
 ## TCGA 肿瘤队列（cBioPortal RSEM）
-f <- file.path(root, "99.P1", "tcga_expr_wide.csv")
+f <- file.path(root, "outputs/phase1", "tcga_expr_wide.csv")
 if (file.exists(f)) {
   w <- read.csv(f, sep = "\t", check.names = FALSE, row.names = 1)
   ex2 <- as.matrix(w); storage.mode(ex2) <- "numeric"

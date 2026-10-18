@@ -1,18 +1,18 @@
 ## ============================================================
 ## P1-4  TCGA-COADREAD (cBioPortal) 三基因：表达分布 + KM 生存 + 突变/CNA 汇总
-## 输出: 99.P1/04.tcga_cbio/{expr_boxplot.pdf, KM_*.pdf x3, KM_summary.csv, mut_cna_bar.pdf}
+## 输出: outputs/phase1/04.tcga_cbio/{expr_boxplot.pdf, KM_*.pdf x3, KM_summary.csv, mut_cna_bar.pdf}
 ## ============================================================
 suppressMessages({library(survival)})
-root   <- "F:/232机器学习联合神经网络/CRC"
-outdir <- file.path(root, "99.P1", "04.tcga_cbio")
+root   <- "./"
+outdir <- file.path(root, "outputs/phase1", "04.tcga_cbio")
 dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
 genes3 <- c("GUCA2A", "CA7", "SST")
 cat("== P1-4 start ==\n")
 
-w <- read.csv(file.path(root, "99.P1", "tcga_expr_wide.csv"), sep = "\t", check.names = FALSE, row.names = 1)
+w <- read.csv(file.path(root, "outputs/phase1", "tcga_expr_wide.csv"), sep = "\t", check.names = FALSE, row.names = 1)
 ex <- as.matrix(w); storage.mode(ex) <- "numeric"
-s2p <- read.csv(file.path(root, "99.P1", "tcga_sample_patient.tsv"), sep = "\t")
-os  <- read.csv(file.path(root, "99.P1", "tcga_os.csv"), sep = "\t")
+s2p <- read.csv(file.path(root, "outputs/phase1", "tcga_sample_patient.tsv"), sep = "\t")
+os  <- read.csv(file.path(root, "outputs/phase1", "tcga_os.csv"), sep = "\t")
 os$status <- ifelse(grepl("DECEASED", os$OS_STATUS), 1, 0)
 os$months <- suppressWarnings(as.numeric(os$OS_MONTHS))
 os <- os[!is.na(os$months) & !is.na(os$status), ]
@@ -62,7 +62,7 @@ boxplot(t(e3), col = c("#F05C3BFF", "#5C88DAFF", "#5CB85CFF"), log = "y",
 dev.off()
 
 ## 突变/CNA
-mc <- read.csv(file.path(root, "99.P1", "tcga_mut_cna.csv"), sep = "\t", check.names = FALSE)
+mc <- read.csv(file.path(root, "outputs/phase1", "tcga_mut_cna.csv"), sep = "\t", check.names = FALSE)
 pdf(file.path(outdir, "mut_cna_bar.pdf"), width = 8, height = 4.5)
 barplot(rbind(mc$mutatedSamples, mc$CNA_amp, mc$CNA_del),
         beside = TRUE, names.arg = mc$gene, col = c("#7f8c8d", "#c0392b", "#2563a8"),
