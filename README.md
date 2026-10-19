@@ -75,6 +75,6 @@ Python 3.13 (requests, openpyxl, pypdf). AutoDock Vina 1.2.7 standalone (downloa
 
 ## Citation
 
-If you use these materials, please cite the associated manuscript: "Loss of the enterocyte-differentiation genes GUCA2A, CA7 and SST as a diagnostic signature for colorectal cancer" (World Journal of Gastrointestinal Oncology, under review).
+If you use these materials, please cite the associated manuscript: "Loss of the enterocyte-differentiation genes GUCA2A, CA7 and SST as a diagnostic signature for colorectal cancer" (under review).
 
 Zenodo DOI: to be minted via the Zenodo-GitHub integration after the first release (v1.0.0 tag is prepared for this purpose).
