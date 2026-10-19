@@ -22,8 +22,11 @@ Generated 2026-09-10; last updated 2026-10-08 (added Tables S36-S37 and the post
 - Figure S16: CellChat bubble plot, epithelial subsets as signal senders
 - Figure S17: CellChat pathway-level communication difference (top 12)
 
-## Supplementary_Tables (35 files; S23-S24 and S28-S29 embedded in the supplementary docx only;
-  S25/S26/S27 also shipped as CSVs)
+## Supplementary_Tables (39 files; S1-S37 complete as CSVs)
+- Table S23: Fully nested re-selection CV, held-out metrics (10 folds)
+- Table S24: Features selected within each fold of the nested re-selection CV
+- Table S28: Fixed-gene repeated CV summary (ANN 0.912 ± 0.011 / logistic 0.940 ± 0.003)
+- Table S29: Fixed-gene repeated CV, per-partition metrics (5 seeds)
 - Table S27: Full nested-CV held-out predictions (150 rows)
 - Table S36: Checkpoint correlations with BH adjustment (both cohorts, 87 tests)
 - Table S37: Frozen-z-score external sensitivity (ANN 0.706 / logistic 0.848)
