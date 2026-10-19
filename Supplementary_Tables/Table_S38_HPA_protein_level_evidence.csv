@@ -1,0 +1,6 @@
+Gene,Antibody,Antibody_reliability,Normal_colon_annotated_cell_types,CRC_IHC_n_patients,High_n,Medium_n,Low_n,Not_detected_n,HPA_summary_annotation,Data_source_note
+CA7,HPA047237,Uncertain,Glandular cells: High; Endothelial cells: Medium; Peripheral nerve/ganglion: Medium (raw staining; knowledge-based annotation pending),11,0,6,3,2,Weak to moderate cytoplasmic and occasional nuclear positivity,Normal-colon annotation pending; antibody reliability uncertain; exploratory evidence only
+GUCA2A,HPA018215,Enhanced,Enterocytes: Low; Goblet cells: Low; Endocrine cells: Medium,9,0,0,0,9,Not detected in colorectal cancer specimens,Secreted peptide hormone; low baseline IHC in normal colon
+SST,HPA019472,Enhanced,Enterocytes: Not detected; Goblet cells: Not detected; Endocrine cells: High,12,0,0,0,12,Absent in colorectal cancer; neuroendocrine-restricted expression,Three antibodies tested in CRC (see rows below)
+SST,CAB000075,Enhanced,Enterocytes: Not detected; Goblet cells: Not detected; Endocrine cells: High,12,0,1,1,10,Weak-medium in 1 of 12,
+SST,CAB034105,Enhanced,Enterocytes: Not detected; Goblet cells: Not detected; Endocrine cells: High,10,0,0,0,10,Absent in colorectal cancer,

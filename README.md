@@ -22,7 +22,8 @@ Generated 2026-09-10; last updated 2026-10-08 (added Tables S36-S37 and the post
 - Figure S16: CellChat bubble plot, epithelial subsets as signal senders
 - Figure S17: CellChat pathway-level communication difference (top 12)
 
-## Supplementary_Tables (39 files; S1-S37 complete as CSVs)
+## Supplementary_Tables (40 files; S1-S38 complete as CSVs)
+- Table S38: HPA protein-level evidence for the three signature genes (antibody IDs, reliability, normal-colon cell-type staining, CRC IHC counts) - new, added 2026-10-19
 - Table S23: Fully nested re-selection CV, held-out metrics (10 folds)
 - Table S24: Features selected within each fold of the nested re-selection CV
 - Table S28: Fixed-gene repeated CV summary (ANN 0.912 ± 0.011 / logistic 0.940 ± 0.003)
