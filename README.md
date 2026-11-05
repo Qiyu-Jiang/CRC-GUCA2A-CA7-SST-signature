@@ -3,6 +3,10 @@
 CRC three-gene signature (GUCA2A/CA7/SST) study - supplementary materials and code for journal upload.
 Generated 2026-09-10; last updated 2026-10-08 (added Tables S36-S37 and the post-review sensitivity scripts 14/14b; all numbers verified against the project archives).
 
+## Figures (main text)
+- Figure 1: Study workflow - cohorts, preprocessing, DEG/WGCNA, feature selection, model validation, and downstream
+  context/tool analyses (`Figures/Figure_1_study_workflow.pdf`, `.png` 600 dpi source).
+
 ## Supplementary_Figures (17 files)
 - Figure S1: PCA before/after ComBat batch correction (training cohort, top-2000 MAD genes)
 - Figure S2: ANN in-sample ROC (reproduction of the reported AUC 0.987)
