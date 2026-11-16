@@ -1,3 +1,12 @@
+## ------------------------------------------------------------------
+## SUPERSEDED (2026-11).  Historical record; do not use for new analyses.
+## This single-seed implementation fits an nnet classifier without re-standardising
+## the held-out matrix, and the fit saturates in 7/10 folds. The pooled AUC (0.528,
+## Table S27) therefore reflects a degenerate fit, not selection optimism.
+## Corrected, replicated analysis: nested_stable.R (50 paired folds).
+## See Supplementary_Code/ANALYSIS_CORRECTION.md.
+## ------------------------------------------------------------------
+
 ## ============================================================
 ## P0-3 Nested CV + multi-seed consensus (addresses review M1/M2/M3)
 ## Outputs -> outputs/phase0/03_nested_cv/

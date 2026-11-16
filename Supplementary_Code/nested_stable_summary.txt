@@ -1,0 +1,5 @@
+folds 50 | fixed mean 0.980 (SD 0.040) | nested mean 0.999 (SD 0.009)
+Delta (fixed - nested) mean -0.019 | 95% CI -0.030 to -0.009
+re-selection: GUCA2A 50/50
+re-selection: CA7 0/50
+re-selection: SST 0/50

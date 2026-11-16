@@ -1,7 +1,24 @@
 ﻿# SUBMISSION_SUPP - supplementary package README
 
 CRC three-gene signature (GUCA2A/CA7/SST) study - supplementary materials and code for journal upload.
-Generated 2026-09-10; last updated 2026-10-08 (added Tables S36-S37 and the post-review sensitivity scripts 14/14b; all numbers verified against the project archives).
+Generated 2026-09-10; last updated 2026-11-16 (added Tables S36-S37 and the post-review sensitivity scripts 14/14b; all numbers verified against the project archives).
+
+## Correction notice: nested re-selection CV (2026-11)
+
+The original single-seed nested-CV implementation (`P0_03_nested_cv.R`) saturated in 7 of 10
+folds; pooled held-out AUC 0.528 in Table S27 is an artefact of that fit, not evidence that
+re-selection destroys the signature. The analysis was rebuilt with fold-local scaling, LASSO
+and a logistic learner over 5 partitions x 10 folds (`Supplementary_Code/nested_stable.R`):
+
+| Quantity | Value |
+|---|---|
+| Fixed three-gene AUC | 0.980 (SD 0.040) |
+| Nested re-selection AUC | 0.999 (SD 0.009) |
+| Paired Delta (fixed - nested) | -0.019 (95% CI -0.030 to -0.009) |
+| GUCA2A / CA7 / SST selected | 50/50 / 0/50 / 0/50 |
+
+Tables S23, S24 and S27 are retained unchanged as a historical record; S28 and S29 (fixed-gene
+repeated CV) are unaffected. Details: `Supplementary_Code/ANALYSIS_CORRECTION.md`.
 
 ## Supplementary_Figures (17 files)
 - Figure S1: PCA before/after ComBat batch correction (training cohort, top-2000 MAD genes)
@@ -22,7 +39,7 @@ Generated 2026-09-10; last updated 2026-10-08 (added Tables S36-S37 and the post
 - Figure S16: CellChat bubble plot, epithelial subsets as signal senders
 - Figure S17: CellChat pathway-level communication difference (top 12)
 
-## Supplementary_Tables (40 files; S1-S38 complete as CSVs)
+## Supplementary_Tables (39 CSV files; S1-S38 complete as CSVs)
 - Table S38: HPA protein-level evidence for the three signature genes (antibody IDs, reliability, normal-colon cell-type staining, CRC IHC counts) - new, added 2026-10-19
 - Table S23: Fully nested re-selection CV, held-out metrics (10 folds)
 - Table S24: Features selected within each fold of the nested re-selection CV
@@ -76,6 +93,6 @@ Python 3.13 (requests, openpyxl, pypdf). AutoDock Vina 1.2.7 standalone (downloa
 
 ## Citation
 
-If you use these materials, please cite the associated manuscript: "Loss of the enterocyte-differentiation genes GUCA2A, CA7 and SST as a diagnostic signature for colorectal cancer" (under review).
+If you use these materials, please cite the associated manuscript: "Loss of GUCA2A, CA7 and SST as a differentiation-associated candidate diagnostic signature in colorectal cancer" (under review).
 
 Zenodo DOI: to be minted via the Zenodo-GitHub integration after the first release (v1.0.0 tag is prepared for this purpose).
