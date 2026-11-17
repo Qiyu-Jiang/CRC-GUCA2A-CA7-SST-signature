@@ -20,6 +20,22 @@ and a logistic learner over 5 partitions x 10 folds (`Supplementary_Code/nested_
 Tables S23, S24 and S27 are retained unchanged as a historical record; S28 and S29 (fixed-gene
 repeated CV) are unaffected. Details: `Supplementary_Code/ANALYSIS_CORRECTION.md`.
 
+## Supplementary document generation
+
+The journal-formatted `Supplementary_Materials_COMPLETE.docx` is generated from the CSVs in
+`Supplementary_Tables/`:
+
+```bash
+python Supplementary_Code/rebuild_supplementary_tables.py     --docx Supplementary_Materials_COMPLETE.docx --csv-dir Supplementary_Tables
+```
+
+The submitted document carried abbreviated copies of nine per-sample tables (S3, S5, S7, S9, S11,
+S12, S18, S27, S32, each labelled "Showing first N of M"), an S25 block placed after S29, and a
+caption/table mismatch around S6/S6b. The script restores the full tables, relocates S25, fixes
+S6/S6b and appends S38 (HPA protein-level evidence), so the docx and the CSVs cannot drift apart.
+S9 and S11 are transposed (samples in rows, 150 x 21 and 150 x 29) for readability; the
+untransposed matrices remain available as the original CSV files.
+
 ## Supplementary_Figures (17 files)
 - Figure S1: PCA before/after ComBat batch correction (training cohort, top-2000 MAD genes)
 - Figure S2: ANN in-sample ROC (reproduction of the reported AUC 0.987)
