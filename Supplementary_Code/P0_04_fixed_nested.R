@@ -87,7 +87,7 @@ write.csv(res_ann, file.path(outdir, "fixed_nested_by_seed.csv"), row.names = FA
 write.csv(res_glm, file.path(outdir, "fixed_nested_glm_by_seed.csv"), row.names = FALSE)
 
 summ <- data.frame(
-  model = c("ANN fixed-gene nested CV (5 partitions)", "Logistic fixed-gene nested CV (5 partitions)"),
+  model = c("ANN fixed-gene repeated CV (5 partitions)", "Logistic fixed-gene repeated CV (5 partitions)"),
   auc_mean = c(mean(res_ann$auc), mean(res_glm$auc)),
   auc_sd = c(sd(res_ann$auc), sd(res_glm$auc)),
   auc_min = c(min(res_ann$auc), min(res_glm$auc)),
