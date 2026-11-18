@@ -1,7 +1,7 @@
 ﻿# SUBMISSION_SUPP - supplementary package README
 
 CRC three-gene signature (GUCA2A/CA7/SST) study - supplementary materials and code for journal upload.
-Generated 2026-09-10; last updated 2026-11-16 (added Tables S36-S37 and the post-review sensitivity scripts 14/14b; all numbers verified against the project archives).
+Generated 2026-09-10; last updated 2026-11-17 (added Tables S36-S37 and the post-review sensitivity scripts 14/14b; all numbers verified against the project archives).
 
 ## Correction notice: nested re-selection CV (2026-11)
 
@@ -16,6 +16,10 @@ and a logistic learner over 5 partitions x 10 folds (`Supplementary_Code/nested_
 | Nested re-selection AUC | 0.999 (SD 0.009) |
 | Paired Delta (fixed - nested) | -0.019 (95% CI -0.030 to -0.009) |
 | GUCA2A / CA7 / SST selected | 50/50 / 0/50 / 0/50 |
+
+These absolute AUCs are reported only to compute the paired difference; the manuscript reports
+DeltaAUC (fixed - nested), not these absolute values.
+
 
 Tables S23, S24 and S27 are retained unchanged as a historical record; S28 and S29 (fixed-gene
 repeated CV) are unaffected. Details: `Supplementary_Code/ANALYSIS_CORRECTION.md`.
@@ -56,7 +60,11 @@ untransposed matrices remain available as the original CSV files.
 - Figure S17: CellChat pathway-level communication difference (top 12)
 
 ## Supplementary_Tables (39 CSV files; S1-S38 complete as CSVs)
-- Table S38: HPA protein-level evidence for the three signature genes (antibody IDs, reliability, normal-colon cell-type staining, CRC IHC counts) - new, added 2026-10-19
+- Table S38: HPA protein-level evidence
+- Table S39: genes selected within each of the 50 nested re-selection folds (median panel 24 genes)
+- Table S40: gene-selection frequency across the 50 nested folds (genes in >= 10 folds)
+- Table S41: post hoc ESTIMATE-based purity sensitivity (logFC unadjusted vs purity-adjusted, by cohort)
+ for the three signature genes (antibody IDs, reliability, normal-colon cell-type staining, CRC IHC counts) - new, added 2026-10-19
 - Table S23: Fully nested re-selection CV, held-out metrics (10 folds)
 - Table S24: Features selected within each fold of the nested re-selection CV
 - Table S28: Fixed-gene repeated CV summary (ANN 0.912 ± 0.011 / logistic 0.940 ± 0.003)
