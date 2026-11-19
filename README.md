@@ -120,3 +120,22 @@ Python 3.13 (requests, openpyxl, pypdf). AutoDock Vina 1.2.7 standalone (downloa
 If you use these materials, please cite the associated manuscript: "Loss of GUCA2A, CA7 and SST as a differentiation-associated candidate diagnostic signature in colorectal cancer" (under review).
 
 Zenodo DOI: to be minted via the Zenodo-GitHub integration after the first release (v1.0.0 tag is prepared for this purpose).
+
+## Figure corrections (2026-11-19)
+
+- **Figure S13 / S14 / S15 / S17** were rebuilt. S13 showed "n ~ 637" in the title and a 0-1
+  fraction axis for counts; it is now the n = 257 version with an integer sample-count axis.
+  S14 is now the log-safe version (zeros shown at 0.5); the previous PDF, which carried an
+  impossible "p = 1e+13" annotation, has been removed.
+- **S15** is now the relative-information-flow panel only (share of each group's total);
+  the absolute panel is Figure 8A in the paper, so page 1 of the old two-page export is gone.
+- **S17** now shows all 61 pathways (EpiSigHigh minus EpiSigLow); the top-12 subset is Figure 8B.
+- **Figure S19 (new)**: GSEA running-enrichment plots for the three signature genes
+  (KEGG c2.cp.kegg, 186 pathways, eps = 0). Enrichment scores reproduce the pipeline run
+  exactly (0.80656 / 0.76006 / -0.53622 / -0.58590); NES values are those of
+  `26.GSEA/*.result.txt`.
+- **Text correction**: GSEA was run per gene, not on a "combined expression score" of the
+  three genes; the ranked list is tumour-only (n = 117) and the metric is the mean difference
+  between the median-split halves. The manuscript Methods and Results now state this.
+- Rebuild scripts: `Supplementary_Code/figure_rebuild_*.py|R`, verification:
+  `Supplementary_Code/verify_GSEA_clusterProfiler.R`; GSEA source tables in `GSEA_source_data/`.
