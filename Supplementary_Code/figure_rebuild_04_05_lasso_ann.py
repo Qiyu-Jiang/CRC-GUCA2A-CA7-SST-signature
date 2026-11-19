@@ -166,9 +166,9 @@ def draw_roc(ax, series, xlab=True, ylab=True, legend=False):
 # ---------------------------------------------------------------- save helpers
 def save(fig, stem):
     png = os.path.join(DST, stem + ".png")
-    fig.savefig(png, dpi=DPI, bbox_inches="tight", pad_inches=0.02, facecolor="white")
+    fig.savefig(png, dpi=DPI, bbox_inches="tight", pad_inches=0.045, facecolor="white")
 
-    fig.savefig(os.path.join(DST, stem + ".pdf"), dpi=DPI, bbox_inches="tight", pad_inches=0.02, facecolor="white")
+    fig.savefig(os.path.join(DST, stem + ".pdf"), dpi=DPI, bbox_inches="tight", pad_inches=0.045, facecolor="white")
     arr = np.array(Image.open(png).convert("RGB"))
     tif.imwrite(os.path.join(DST, stem + ".tif"), arr, compression="zlib",
                 photometric="rgb", resolution=(DPI, DPI))
@@ -176,7 +176,7 @@ def save(fig, stem):
     return png
 
 
-def letter(fig, ax, ch, dx=-0.075, dy=0.045, size=10):
+def letter(fig, ax, ch, dx=-0.075, dy=0.022, size=10):
     bb = ax.get_position()
     fig.text(bb.x0 + dx, bb.y0 + bb.height + dy, ch, fontsize=size,
              fontweight="bold", ha="left", va="top")
@@ -192,9 +192,9 @@ def fig4_composite():
     sub = gs[1, :].subgridspec(1, 2, wspace=0.34)
     axC1 = fig.add_subplot(sub[0, 0]); axC2 = fig.add_subplot(sub[0, 1])
     draw_4C(axC1, axC2)
-    fig.text(0.010, 0.975, "A", fontsize=10, fontweight="bold")
-    fig.text(0.520, 0.975, "B", fontsize=10, fontweight="bold")
-    fig.text(0.010, 0.395, "C", fontsize=10, fontweight="bold")
+    fig.text(0.010, 0.985, "A", fontsize=10, fontweight="bold", va="top")
+    fig.text(0.520, 0.985, "B", fontsize=10, fontweight="bold", va="top")
+    fig.text(0.010, 0.425, "C", fontsize=10, fontweight="bold", va="top")
     return fig
 
 

@@ -34,9 +34,9 @@ C_HI, C_LO = "#D96C5F", "#4FB0AE"
 
 def save(fig, stem):
     png = os.path.join(DST, stem + ".png")
-    fig.savefig(png, dpi=DPI, bbox_inches="tight", pad_inches=0.02, facecolor="white")
+    fig.savefig(png, dpi=DPI, bbox_inches="tight", pad_inches=0.045, facecolor="white")
 
-    fig.savefig(os.path.join(DST, stem + ".pdf"), dpi=DPI, bbox_inches="tight", pad_inches=0.02, facecolor="white")
+    fig.savefig(os.path.join(DST, stem + ".pdf"), dpi=DPI, bbox_inches="tight", pad_inches=0.045, facecolor="white")
     arr = np.array(Image.open(png).convert("RGB"))
     tif.imwrite(os.path.join(DST, stem + ".tif"), arr, compression="zlib",
                 photometric="rgb", resolution=(DPI, DPI))
@@ -141,8 +141,8 @@ def fig8(d):
                   left=0.155, right=0.985, top=0.925, bottom=0.175)
     axA = fig.add_subplot(gs[0]); axB = fig.add_subplot(gs[1])
     panel_A(axA, d); panel_B(axB, d)
-    fig.text(0.012, 0.965, "A", fontsize=10, fontweight="bold")
-    fig.text(0.545, 0.965, "B", fontsize=10, fontweight="bold")
+    fig.text(0.012, 0.985, "A", fontsize=10, fontweight="bold", va="top")
+    fig.text(0.545, 0.985, "B", fontsize=10, fontweight="bold", va="top")
     return fig
 
 
@@ -181,7 +181,7 @@ def fig7B():
     mutcna(ax)
     fig.subplots_adjust(left=0.145, right=0.97, top=0.92, bottom=0.245)
     p = ax.get_position()
-    fig.text(p.x0 - 0.105, p.y1 + 0.045, "B", fontsize=10, fontweight="bold")
+    fig.text(p.x0 - 0.105, p.y1 + 0.028, "B", fontsize=10, fontweight="bold", va="top")
     return fig
 
 

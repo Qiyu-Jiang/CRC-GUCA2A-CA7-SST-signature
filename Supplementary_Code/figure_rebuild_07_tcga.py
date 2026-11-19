@@ -29,9 +29,9 @@ PSTAT = {"GUCA2A": ("p = 0.140", "HR 0.54 (Low vs High)"),
 
 def save(fig, stem):
     png = os.path.join(DST, stem + ".png")
-    fig.savefig(png, dpi=DPI, bbox_inches="tight", pad_inches=0.02, facecolor="white")
+    fig.savefig(png, dpi=DPI, bbox_inches="tight", pad_inches=0.045, facecolor="white")
 
-    fig.savefig(os.path.join(DST, stem + ".pdf"), dpi=DPI, bbox_inches="tight", pad_inches=0.02, facecolor="white")
+    fig.savefig(os.path.join(DST, stem + ".pdf"), dpi=DPI, bbox_inches="tight", pad_inches=0.045, facecolor="white")
     arr = np.array(Image.open(png).convert("RGB"))
     tif.imwrite(os.path.join(DST, stem + ".tif"), arr, compression="zlib",
                 photometric="rgb", resolution=(DPI, DPI))
@@ -112,8 +112,8 @@ def fig7():
     axC1 = fig.add_subplot(gs[2, 0]); axC2 = fig.add_subplot(gs[2, 1]); axC3 = fig.add_subplot(gs[2, 2])
     for ax, g in ((axC1, "GUCA2A"), (axC2, "CA7"), (axC3, "SST")):
         meth(ax, g)
-    fig.text(0.012, 0.995, "A", fontsize=10, fontweight="bold", va="top")
-    fig.text(0.012, 0.315, "C", fontsize=10, fontweight="bold", va="top")
+    fig.text(0.012, 0.990, "A", fontsize=10, fontweight="bold", va="top")
+    fig.text(0.012, 0.340, "C", fontsize=10, fontweight="bold", va="top")
     return fig
 
 

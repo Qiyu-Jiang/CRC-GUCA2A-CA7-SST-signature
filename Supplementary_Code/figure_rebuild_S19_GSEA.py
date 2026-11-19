@@ -154,7 +154,7 @@ def build():
         print(f"{gene:8s}{term:44s} ES_table={es_tab:+.5f} ES_mine={es_mine:+.5f} NES={nes:+.3f}")
         color = "#C0392B" if nes > 0 else "#2563A8"
         draw(ax_top, ax_tick, ax_rank, stats, gorder, sets[term], color, title, es_tab, nes, padj)
-        fig.text(0.012 if col == 0 else 0.520, 0.995 - (k // 2) * 0.495,
+        fig.text(0.012 if col == 0 else 0.520, 0.992 - (k // 2) * 0.495,
                  ("A" if k == 0 else "B" if k == 1 else "C" if k == 2 else "D"),
                  fontsize=10, fontweight="bold", va="top")
     return fig
@@ -162,9 +162,9 @@ def build():
 
 def save(fig, stem):
     png = os.path.join(DST, stem + ".png")
-    fig.savefig(png, dpi=DPI, bbox_inches="tight", pad_inches=0.02, facecolor="white")
+    fig.savefig(png, dpi=DPI, bbox_inches="tight", pad_inches=0.045, facecolor="white")
     fig.savefig(os.path.join(DST, stem + ".pdf"), dpi=DPI, bbox_inches="tight",
-                pad_inches=0.02, facecolor="white")
+                pad_inches=0.045, facecolor="white")
     arr = np.array(Image.open(png).convert("RGB"))
     tif.imwrite(os.path.join(DST, stem + ".tif"), arr, compression="zlib",
                 photometric="rgb", resolution=(DPI, DPI))
