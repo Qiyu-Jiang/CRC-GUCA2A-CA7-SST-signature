@@ -1,7 +1,7 @@
 ﻿# SUBMISSION_SUPP - supplementary package README
 
 CRC three-gene signature (GUCA2A/CA7/SST) study - supplementary materials and code for journal upload.
-Generated 2026-09-10; last updated 2026-11-17 (added Tables S36-S37 and the post-review sensitivity scripts 14/14b; all numbers verified against the project archives).
+Generated 2026-09-10; last updated 2026-11-19 (added Tables S36-S37 and the post-review sensitivity scripts 14/14b; all numbers verified against the project archives).
 
 ## Correction notice: nested re-selection CV (2026-11)
 
@@ -40,26 +40,25 @@ S6/S6b and appends S38 (HPA protein-level evidence), so the docx and the CSVs ca
 S9 and S11 are transposed (samples in rows, 150 x 21 and 150 x 29) for readability; the
 untransposed matrices remain available as the original CSV files.
 
-## Supplementary_Figures (17 files)
+## Supplementary_Figures (16 figures)
+
 - Figure S1: PCA before/after ComBat batch correction (training cohort, top-2000 MAD genes)
 - Figure S2: ANN in-sample ROC (reproduction of the reported AUC 0.987)
 - Figure S3: ANN stratified 10-fold cross-validation ROC (AUC 0.907, 95% CI 0.830-0.984)
 - Figure S4: ANN external validation ROC on GSE110224 (AUC 0.820) with logistic comparator (0.841)
 - Figure S5: Feature-selection frequency over 100 repeats (80% stratified subsamples; LASSO + RF)
-- Figure S6: ssGSEA boxplot, Senbabaoglu 20-cell signature (Control vs Tumour)
-- Figure S7: Spearman heatmap, feature genes vs Senbabaoglu 20 cell types
-- Figure S8: ssGSEA boxplot, Charoentong 28-cell signature (Control vs Tumour)
-- Figure S9: Spearman heatmap, feature genes vs Charoentong 28 cell types
-- Figure S10: Immune-checkpoint correlations, training cohort (15 checkpoint genes)
-- Figure S11: Immune-checkpoint correlations, TCGA tumour cohort
-- Figure S12: TCGA overall survival, KM curves for GUCA2A/CA7/SST (median split, n=242)
-- Figure S13: TCGA non-synonymous mutations and GISTIC CNA summary barplot
-- Figure S14: TCGA tumour expression boxplot (RSEM, three signature genes)
-- Figure S15: CellChat rankNet comparison, EpiSigHigh vs EpiSigLow
-- Figure S16: CellChat bubble plot, epithelial subsets as signal senders
-- Figure S17: CellChat pathway-level communication difference (top 12)
-
-## Supplementary_Tables (39 CSV files; S1-S38 complete as CSVs)
+- Figure S6: Per-cell-type ssGSEA boxplots, Senbabaoglu 20-cell signature (Control vs Tumour; 20 facets)
+- Figure S7: Per-cell-type ssGSEA boxplots, Charoentong 28-cell signature (28 facets)
+- Figure S8: Spearman heatmap, feature genes vs Charoentong 28 cell types
+- Figure S9: Immune-checkpoint correlations, training cohort (15 checkpoint genes)
+- Figure S10: Immune-checkpoint correlations, TCGA tumour cohort
+- Figure S11: TCGA tumour expression boxplot (RSEM, three signature genes; zeros shown at 0.5)
+- Figure S12: CellChat rankNet comparison, relative information flow (EpiSigHigh vs EpiSigLow)
+- Figure S13: CellChat bubble plot, epithelial subsets as signal senders
+- Figure S14: CellChat pathway-level communication difference, all 61 pathways
+- Figure S15: TCGA cross-platform performance of the fixed three-gene model (ROC/AUC summary)
+- Figure S16: GSEA running-enrichment plots for the three signature genes (KEGG c2.cp.kegg)
+## Supplementary_Tables (45 CSV files; S1–S43 + S6b/S33b complete as CSVs)
 - Table S38: HPA protein-level evidence
 - Table S39: genes selected within each of the 50 nested re-selection folds (median panel 24 genes)
 - Table S40: gene-selection frequency across the 50 nested folds (genes in >= 10 folds)
@@ -123,19 +122,11 @@ Zenodo DOI: to be minted via the Zenodo-GitHub integration after the first relea
 
 ## Figure corrections (2026-11-19)
 
-- **Figure S13 / S14 / S15 / S17** were rebuilt. S13 showed "n ~ 637" in the title and a 0-1
-  fraction axis for counts; it is now the n = 257 version with an integer sample-count axis.
-  S14 is now the log-safe version (zeros shown at 0.5); the previous PDF, which carried an
-  impossible "p = 1e+13" annotation, has been removed.
-- **S15** is now the relative-information-flow panel only (share of each group's total);
-  the absolute panel is Figure 8A in the paper, so page 1 of the old two-page export is gone.
-- **S17** now shows all 61 pathways (EpiSigHigh minus EpiSigLow); the top-12 subset is Figure 8B.
-- **Figure S19 (new)**: GSEA running-enrichment plots for the three signature genes
-  (KEGG c2.cp.kegg, 186 pathways, eps = 0). Enrichment scores reproduce the pipeline run
-  exactly (0.80656 / 0.76006 / -0.53622 / -0.58590); NES values are those of
-  `26.GSEA/*.result.txt`.
-- **Text correction**: GSEA was run per gene, not on a "combined expression score" of the
-  three genes; the ranked list is tumour-only (n = 117) and the metric is the mean difference
-  between the median-split halves. The manuscript Methods and Results now state this.
-- Rebuild scripts: `Supplementary_Code/figure_rebuild_*.py|R`, verification:
-  `Supplementary_Code/verify_GSEA_clusterProfiler.R`; GSEA source tables in `GSEA_source_data/`.
+- **S6 / S7** are per-cell-type faceted boxplots (20 Senbabaoglu / 28 Charoentong panels); earlier pooled two-box versions are removed.
+- **S11** is the log-safe TCGA expression boxplot (zeros shown at 0.5); the previous PDF with an impossible p-value annotation is removed.
+- **S12** is the relative-information-flow panel only; the absolute panel is Figure 8A in the paper.
+- **S14** shows all 61 pathways (EpiSigHigh minus EpiSigLow); the top-12 subset is Figure 8B.
+- **S15** is the TCGA cross-platform ROC/AUC summary (380 tumours + 51 normals).
+- **S16 (new)** contains GSEA running-enrichment plots for the three signature genes (KEGG c2.cp.kegg, 186 pathways, eps = 0). Enrichment scores reproduce the pipeline run exactly (0.80656 / 0.76006 / -0.53622 / -0.58590); NES values are those of `26.GSEA/*.result.txt`.
+- **Text correction**: GSEA was run per gene, not on a "combined expression score"; the ranked list is tumour-only (n = 117) and the metric is the mean difference between the median-split halves.
+- Rebuild scripts: `Supplementary_Code/figure_rebuild_*.py|R`, verification: `Supplementary_Code/verify_GSEA_clusterProfiler.R`; GSEA source tables in `GSEA_source_data/`.
